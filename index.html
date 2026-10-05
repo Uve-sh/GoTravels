@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoTravels — Handcrafted Journeys Across India & Beyond</title>
+  <meta name="description" content="Official luxury & boutique tour packages across India and the world. Explore Rajasthan palaces, Kerala backwaters, Himalayan treks, and international escapes." />
+  
+  <!-- Preconnect to Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP UTILITY BAR
+       ============================================================ -->
+  <aside id="topbar" aria-label="Announcements & Contact">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="topbar-badge">Official Travel Partner</span>
+        <span>Handcrafted Itineraries Across India &amp; Curated Global Escapes</span>
+      </div>
+      <div class="topbar-right">
+        <a href="#guide" class="topbar-link">Free 2026 Travel Guide</a>
+        <a href="tel:+919876543210" class="topbar-link">+91 98765 43210</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       EDITORIAL NAVIGATION
+       ============================================================ -->
+  <header id="navbar" role="banner">
+    <div class="container nav-inner">
+      <a href="#" class="nav-brand" aria-label="GoTravels Home">
+        <span class="brand-title">GoTravels</span>
+        <span class="brand-dot"></span>
+        <span class="brand-tagline">Journeys &amp; Tours</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks" role="navigation" aria-label="Main Navigation">
+        <a href="#experiences" class="nav-link">Experiences</a>
+        <a href="#destinations" class="nav-link">Destinations</a>
+        <a href="#packages" class="nav-link">Tour Packages</a>
+        <a href="#why-us" class="nav-link">Why GoTravels</a>
+        <a href="#stories" class="nav-link">Traveler Stories</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="tel:+919876543210" class="nav-phone" aria-label="Phone consultation">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+          <span>+91 98765 43210</span>
+        </a>
+        <button class="btn btn-solid-dark" onclick="openConciergeModal()">Plan Your Trip</button>
+        <button class="hamburger-btn" id="hamBtn" onclick="toggleMobileNav()" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================
+         FULL-BLEED EDITORIAL HERO
+         ============================================================ -->
+    <section id="hero" aria-label="Hero Showcase">
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide active" style="background-image: url('images/hero_banner.jpg')" data-location="Agra, Uttar Pradesh" data-title="Timeless Wonders of India" data-sub="From marble monuments at sunrise to regal desert forts, experience centuries of living heritage."></div>
+        <div class="hero-slide" style="background-image: url('images/rajasthan.jpg')" data-location="Jodhpur &amp; Jaisalmer, Rajasthan" data-title="Fortresses, Dappled Dunes &amp; Royalty" data-sub="Private palace dinners, camel safaris, and starlit nights under the Thar desert sky."></div>
+        <div class="hero-slide" style="background-image: url('images/kerala.jpg')" data-location="Alleppey &amp; Munnar, Kerala" data-title="Tranquil Waters &amp; Tea Mist Valleys" data-sub="Glide through coconut-fringed backwaters on private houseboats and unwind in hill-station sanctuary."></div>
+        <div class="hero-slide" style="background-image: url('images/himalayas.jpg')" data-location="Spiti &amp; Ladakh, Himalayas" data-title="The Crown of the Great Himalayas" data-sub="Monasteries carved into cliff faces, crystal glacial rivers, and high-altitude mountain passes."></div>
+      </div>
+
+      <div class="hero-gradient-overlay"></div>
+
+      <div class="container hero-container">
+        <div class="hero-caption-card">
+          <div class="hero-location-tag" id="heroLocation">Agra, Uttar Pradesh</div>
+          <h1 class="hero-title" id="heroTitle">Timeless Wonders of India</h1>
+          <p class="hero-subtitle" id="heroSub">From marble monuments at sunrise to regal desert forts, experience centuries of living heritage.</p>
+          <div class="hero-actions">
+            <a href="#packages" class="btn btn-solid-accent">Explore Tour Packages</a>
+            <button class="btn btn-outline-white" onclick="openConciergeModal('Custom Itinerary Request')">Request Custom Itinerary</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-controls">
+        <div class="slide-counter">
+          <span class="current-num" id="currentSlideNum">01</span> / 04
+        </div>
+        <div class="slide-nav-arrows">
+          <button class="slide-arrow-btn" onclick="prevHeroSlide()" aria-label="Previous Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <button class="slide-arrow-btn" onclick="nextHeroSlide()" aria-label="Next Slide">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRIP FINDER (Horizontal, Clean, Functional)
+         ============================================================ -->
+    <section id="trip-finder">
+      <div class="container">
+        <div class="finder-card">
+          <form class="finder-form" id="finderForm" onsubmit="handleTripSearch(event)">
+            <div class="finder-group">
+              <label class="finder-label" for="findDest">Where would you like to travel?</label>
+              <div class="finder-select-wrapper">
+                <select id="findDest" class="finder-select">
+                  <option value="">All Destinations</option>
+                  <option value="rajasthan">Rajasthan (Jaipur, Jodhpur, Udaipur)</option>
+                  <option value="kerala">Kerala (Alleppey, Munnar, Kochi)</option>
+                  <option value="goa">Goa (Heritage, Sun &amp; Coastal Living)</option>
+                  <option value="himalayas">Himalayas (Ladakh, Himachal, Kashmir)</option>
+                  <option value="bali">Bali &amp; Southeast Asia</option>
+                  <option value="europe">Europe &amp; International</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-group">
+              <label class="finder-label" for="findDuration">Duration</label>
+              <div class="finder-select-wrapper">
+                <select id="findDuration" class="finder-select">
+                  <option value="">Any Duration</option>
+                  <option value="short">4 - 6 Days (Short Break)</option>
+                  <option value="medium">7 - 10 Days (Recommended)</option>
+                  <option value="long">11+ Days (Grand Circuit)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="finder-group">
+              <label class="finder-label" for="findStyle">Travel Style</label>
+              <div class="finder-select-wrapper">
+                <select id="findStyle" class="finder-select">
+                  <option value="">Any Style</option>
+                  <option value="heritage">Heritage &amp; Palaces</option>
+                  <option value="wellness">Wellness &amp; Relaxation</option>
+                  <option value="adventure">High Altitude &amp; Adventure</option>
+                  <option value="luxury">Luxury Honeymoon</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-solid-dark btn-finder">Find Packages</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         EXPLORE BY EXPERIENCE (VisitTheUSA Mosaic Layout)
+         ============================================================ -->
+    <section id="experiences" class="section-py">
+      <div class="container">
+        <div class="editorial-header">
+          <div class="header-meta">
+            <span class="eyebrow">Curated Collections</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-title">Explore by Experience</h2>
+          <p class="section-lead">Every journey is shaped by a distinct feeling — whether it is the golden quiet of Thar desert dunes, the emerald calm of backwaters, or the raw grandeur of snow-bound peaks.</p>
+        </div>
+
+        <div class="experiences-mosaic">
+          <!-- Col 7 Card -->
+          <article class="mosaic-card col-7" onclick="filterByExperience('heritage')">
+            <img src="images/rajasthan.jpg" alt="Rajasthan Desert Fort Palace" class="mosaic-img" loading="lazy" />
+            <div class="mosaic-overlay"></div>
+            <div class="mosaic-content">
+              <span class="mosaic-tag">Heritage &amp; Architecture</span>
+              <h3 class="mosaic-title">Palaces of the Maharajas</h3>
+              <p class="mosaic-desc">Walk the courtyards of Mehrangarh, stay in lakeside palaces, and discover royal textile and culinary legacies.</p>
+              <span class="mosaic-cta">
+                View 8 Curated Circuits
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Col 5 Card -->
+          <article class="mosaic-card col-5" onclick="filterByExperience('wellness')">
+            <img src="images/kerala.jpg" alt="Kerala Backwaters Boat" class="mosaic-img" loading="lazy" />
+            <div class="mosaic-overlay"></div>
+            <div class="mosaic-content">
+              <span class="mosaic-tag">Wellness &amp; Nature</span>
+              <h3 class="mosaic-title">Slow Waters &amp; Ayurveda</h3>
+              <p class="mosaic-desc">Rejuvenate along palm-canopied waterways with certified master Ayurvedic wellness therapists.</p>
+              <span class="mosaic-cta">
+                Explore Packages
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Col 4 Card -->
+          <article class="mosaic-card col-4" onclick="filterByExperience('adventure')">
+            <img src="images/himalayas.jpg" alt="Himalayan Mountain Passes" class="mosaic-img" loading="lazy" />
+            <div class="mosaic-overlay"></div>
+            <div class="mosaic-content">
+              <span class="mosaic-tag">Mountain &amp; Treks</span>
+              <h3 class="mosaic-title">Himalayan Valleys</h3>
+              <p class="mosaic-desc">Pristine alpine meadows, high monasteries, and guided expeditions.</p>
+              <span class="mosaic-cta">
+                View Treks
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Col 4 Card -->
+          <article class="mosaic-card col-4" onclick="filterByExperience('coastal')">
+            <img src="images/goa.jpg" alt="Goa Coastline" class="mosaic-img" loading="lazy" />
+            <div class="mosaic-overlay"></div>
+            <div class="mosaic-content">
+              <span class="mosaic-tag">Coastal Sanctuary</span>
+              <h3 class="mosaic-title">Sun, Coast &amp; Heritage</h3>
+              <p class="mosaic-desc">Portuguese-colonial villas, seaside dining, and quiet southern coves.</p>
+              <span class="mosaic-cta">
+                View Escapes
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+
+          <!-- Col 4 Card -->
+          <article class="mosaic-card col-4" onclick="filterByExperience('international')">
+            <img src="images/bali.jpg" alt="Bali Tropical Temple" class="mosaic-img" loading="lazy" />
+            <div class="mosaic-overlay"></div>
+            <div class="mosaic-content">
+              <span class="mosaic-tag">International Horizons</span>
+              <h3 class="mosaic-title">Bali &amp; Island Life</h3>
+              <p class="mosaic-desc">Emerald rice terraces, cliffside sanctuaries, and tropical sunsets.</p>
+              <span class="mosaic-cta">
+                View Island Tours
+                <svg class="btn-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         CURATED TOUR PACKAGES (Magazine Cards, Authentic Pricing)
+         ============================================================ -->
+    <section id="packages" class="section-py section-warm">
+      <div class="container">
+        <div class="editorial-header">
+          <div class="header-meta">
+            <span class="eyebrow">Handcrafted Packages</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-title">Signature Itineraries</h2>
+          <p class="section-lead">Each package is crafted with hand-selected boutique heritage hotels, private chauffeur transport, licensed regional historians, and 24/7 on-trip concierge care.</p>
+        </div>
+
+        <div class="filter-bar">
+          <div class="filter-tabs" role="tablist">
+            <button class="filter-tab active" onclick="filterPackages('all', this)">All Itineraries</button>
+            <button class="filter-tab" onclick="filterPackages('heritage', this)">Heritage &amp; Forts</button>
+            <button class="filter-tab" onclick="filterPackages('wellness', this)">Backwaters &amp; Wellness</button>
+            <button class="filter-tab" onclick="filterPackages('adventure', this)">Himalayas &amp; Treks</button>
+            <button class="filter-tab" onclick="filterPackages('coastal', this)">Coast &amp; Beaches</button>
+            <button class="filter-tab" onclick="filterPackages('international', this)">International</button>
+          </div>
+          <div class="filter-meta">
+            <span id="packageCount" style="font-size: 0.8125rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em;">Showing 6 Itineraries</span>
+          </div>
+        </div>
+
+        <div class="packages-grid" id="packagesGrid">
+          <!-- Package 1: Rajasthan -->
+          <article class="package-card" data-category="heritage">
+            <div class="package-media">
+              <img src="images/rajasthan.jpg" alt="Royal Rajasthan Heritage" class="package-img" loading="lazy" />
+              <span class="package-badge">Bestseller</span>
+              <span class="package-duration-pill">7 Days / 6 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">North India • Rajasthan</span>
+              <h3 class="package-title">Royal Rajasthan: Forts, Palaces &amp; Desert Dunes</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Jaipur → Jodhpur → Jaisalmer Desert Camp</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Private heritage hotel stays &amp; haveli suites</li>
+                <li>Exclusive sundowner atop Mehrangarh Fort</li>
+                <li>Private Thar Desert luxury camel &amp; glamping safari</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹28,500 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Royal Rajasthan (7D/6N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 2: Kerala -->
+          <article class="package-card" data-category="wellness">
+            <div class="package-media">
+              <img src="images/kerala.jpg" alt="Kerala Backwaters & Hills" class="package-img" loading="lazy" />
+              <span class="package-badge">Relaxation</span>
+              <span class="package-duration-pill">6 Days / 5 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">South India • Kerala</span>
+              <h3 class="package-title">Kerala Serenade: Tea Mist, Spice &amp; Backwaters</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Kochi → Munnar Hills → Alleppey Houseboat</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Private crewed traditional kettuvallam houseboat</li>
+                <li>Munnar organic tea plantation private tasting</li>
+                <li>Authentic Ayurvedic wellness rejuvenation session</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹24,900 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Kerala Serenade (6D/5N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 3: Himalayas -->
+          <article class="package-card" data-category="adventure">
+            <div class="package-media">
+              <img src="images/himalayas.jpg" alt="Himalayan Expedition" class="package-img" loading="lazy" />
+              <span class="package-badge">Adventure</span>
+              <span class="package-duration-pill">8 Days / 7 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">North India • Himalayas</span>
+              <h3 class="package-title">Spiti &amp; Ladakh: Across High Mountain Passes</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Leh → Nubra Valley → Pangong Tso Lake</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Cross Khardung La — world's highest motorable pass</li>
+                <li>Boutique camp on the shore of Pangong Tso</li>
+                <li>Guided visits to 11th-century cliffside gompas</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹34,500 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Himalayan Expedition (8D/7N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 4: Goa -->
+          <article class="package-card" data-category="coastal">
+            <div class="package-media">
+              <img src="images/goa.jpg" alt="Goa Coastal Sanctuary" class="package-img" loading="lazy" />
+              <span class="package-badge">Coastal</span>
+              <span class="package-duration-pill">5 Days / 4 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">West Coast • Goa</span>
+              <h3 class="package-title">Goa Unveiled: Latin Quarters &amp; South Coves</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Fontainhas Heritage → Palolem → Cabo de Rama</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Stay in restored Portuguese colonial mansion</li>
+                <li>Private sunset catamaran along the Mandovi</li>
+                <li>Curated coastal culinary crawl &amp; feni tasting</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹19,800 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Goa Coastal (5D/4N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 5: Bali -->
+          <article class="package-card" data-category="international">
+            <div class="package-media">
+              <img src="images/bali.jpg" alt="Bali Tropical Escape" class="package-img" loading="lazy" />
+              <span class="package-badge">International</span>
+              <span class="package-duration-pill">7 Days / 6 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">Southeast Asia • Indonesia</span>
+              <h3 class="package-title">Bali Elements: Sacred Ubud to Uluwatu Cliffs</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Ubud Rainforest → Seminyak → Uluwatu</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Private villa with infinity pool overlooking jungle</li>
+                <li>Tirta Empul water purification blessing ceremony</li>
+                <li>Sunset kecak fire dance atop Uluwatu sea cliffs</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹42,000 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Bali Elements (7D/6N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Package 6: Thailand -->
+          <article class="package-card" data-category="international">
+            <div class="package-media">
+              <img src="images/thailand.jpg" alt="Thailand Explorer" class="package-img" loading="lazy" />
+              <span class="package-badge">International</span>
+              <span class="package-duration-pill">6 Days / 5 Nights</span>
+            </div>
+            <div class="package-body">
+              <span class="package-region">Southeast Asia • Thailand</span>
+              <h3 class="package-title">Thailand Coast: Krabi Lagoons &amp; Phi Phi Bays</h3>
+              <div class="package-route">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Bangkok Grand Temples → Krabi Island Sanctuary</span>
+              </div>
+              <ul class="package-highlights">
+                <li>Private longtail boat charter through emerald lagoons</li>
+                <li>Michelin street food walking tour in old Bangkok</li>
+                <li>5-star beachfront resort in Railay Bay</li>
+              </ul>
+              <div class="package-footer">
+                <div class="package-price-wrap">
+                  <span class="price-label">Starting From</span>
+                  <div class="price-amount">₹36,800 <span class="price-unit">/ person</span></div>
+                </div>
+                <button class="btn btn-solid-dark" onclick="openConciergeModal('Thailand Coast (6D/5N)')">Reserve</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         FEATURE STORY / SEASONAL SPOTLIGHT (Magazine Editorial)
+         ============================================================ -->
+    <section class="section-py">
+      <div class="container">
+        <div class="feature-story">
+          <div class="feature-media">
+            <img src="images/hero_banner.jpg" alt="Golden Triangle at Sunrise" class="feature-img" loading="lazy" />
+          </div>
+          <div class="feature-content">
+            <span class="feature-tag">Seasonal Feature • Winter &amp; Spring 2026</span>
+            <h2 class="feature-title">The Golden Triangle &amp; Beyond: An Aristocratic Perspective</h2>
+            <p class="feature-body">Experience Delhi, Agra, and Jaipur not as crowded tourist circuits, but through private dawn accesses before public gates open, private historian-accompanied walks through old bazaars, and candlelit dinners in 18th-century Rajput palace courtyards.</p>
+            <div>
+              <button class="btn btn-solid-accent" onclick="openConciergeModal('Golden Triangle Special Inquiry')">Inquire About This Journey</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         DESTINATIONS DIRECTORY (Editorial Grid)
+         ============================================================ -->
+    <section id="destinations" class="section-py section-warm">
+      <div class="container">
+        <div class="editorial-header">
+          <div class="header-meta">
+            <span class="eyebrow">Regions &amp; Geography</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-title">Iconic Destinations</h2>
+          <p class="section-lead">Explore our most requested destination hubs, each supported by our dedicated on-ground local concierges.</p>
+        </div>
+
+        <div class="destinations-grid">
+          <div class="dest-card" onclick="filterByExperience('heritage')">
+            <img src="images/rajasthan.jpg" alt="Rajasthan" class="dest-img" loading="lazy" />
+            <div class="dest-overlay"></div>
+            <div class="dest-content">
+              <span class="dest-region">North India</span>
+              <h3 class="dest-name">Rajasthan</h3>
+              <span class="dest-count">14 Curated Tours</span>
+            </div>
+          </div>
+
+          <div class="dest-card" onclick="filterByExperience('wellness')">
+            <img src="images/kerala.jpg" alt="Kerala" class="dest-img" loading="lazy" />
+            <div class="dest-overlay"></div>
+            <div class="dest-content">
+              <span class="dest-region">South India</span>
+              <h3 class="dest-name">Kerala</h3>
+              <span class="dest-count">9 Curated Tours</span>
+            </div>
+          </div>
+
+          <div class="dest-card" onclick="filterByExperience('coastal')">
+            <img src="images/goa.jpg" alt="Goa" class="dest-img" loading="lazy" />
+            <div class="dest-overlay"></div>
+            <div class="dest-content">
+              <span class="dest-region">West Coast</span>
+              <h3 class="dest-name">Goa</h3>
+              <span class="dest-count">6 Curated Tours</span>
+            </div>
+          </div>
+
+          <div class="dest-card" onclick="filterByExperience('international')">
+            <img src="images/europe.jpg" alt="Europe & Beyond" class="dest-img" loading="lazy" />
+            <div class="dest-overlay"></div>
+            <div class="dest-content">
+              <span class="dest-region">International</span>
+              <h3 class="dest-name">Europe &amp; World</h3>
+              <span class="dest-count">18 Curated Tours</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         WHY TRAVEL WITH US (Trust Pillars, Clean Architectural)
+         ============================================================ -->
+    <section id="why-us" class="section-py">
+      <div class="container">
+        <div class="editorial-header">
+          <div class="header-meta">
+            <span class="eyebrow">The GoTravels Standard</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-title">Why Discerning Travelers Choose Us</h2>
+          <p class="section-lead">We do not sell cookie-cutter mass bus tours. We design authentic travel experiences underpinned by rigorous operational standards.</p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-item">
+            <div class="pillar-num">01</div>
+            <h3 class="pillar-title">Certified Local Historians</h3>
+            <p class="pillar-desc">You are guided by authorized regional experts and historians who reveal the stories, private access doors, and culture behind every monument.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-num">02</div>
+            <h3 class="pillar-title">Transparent, All-Inclusive</h3>
+            <p class="pillar-desc">No hidden booking fees, no tourist-trap shops, and no surprise tariffs. Transparent inclusions and premium accommodations guaranteed.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-num">03</div>
+            <h3 class="pillar-title">Tailor-Made Flexibility</h3>
+            <p class="pillar-desc">Every itinerary is customizable. Adjust pacing, upgrade to private palace suites, or extend your stay with seamless itinerary modifications.</p>
+          </div>
+
+          <div class="pillar-item">
+            <div class="pillar-num">04</div>
+            <h3 class="pillar-title">24/7 Dedicated Concierge</h3>
+            <p class="pillar-desc">From your initial airport greeting until your final return flight, your personal trip concierge is reachable 24/7 on ground for total peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAVELER STORIES / EDITORIAL QUOTES
+         ============================================================ -->
+    <section id="stories" class="section-py section-warm">
+      <div class="container">
+        <div class="editorial-header text-center">
+          <div class="header-meta">
+            <span class="eyebrow">Verified Experiences</span>
+            <span class="eyebrow-line"></span>
+          </div>
+          <h2 class="section-title">Words from Our Travelers</h2>
+          <p class="section-lead">Read reflections from families, couples, and solo travelers who journeyed with GoTravels across India and abroad.</p>
+        </div>
+
+        <div class="testimonials-editorial">
+          <div class="testimonial-card">
+            <div>
+              <div class="quote-mark">“</div>
+              <p class="testimonial-quote">The private sunrise entrance at the Taj Mahal arranged by GoTravels was sublime. Having a licensed historian who grew up in Agra made history come alive in a way no standard tour ever could.</p>
+            </div>
+            <div class="author-meta">
+              <div>
+                <div class="author-name">Dr. Rajesh &amp; Meera Sharma</div>
+                <div class="author-trip">Royal Rajasthan &amp; Golden Triangle Circuit</div>
+              </div>
+              <span class="verified-tag">Verified Trip</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="quote-mark">“</div>
+              <p class="testimonial-quote">The Kerala houseboat was immaculate — fresh fish cooked by our personal chef, serene canals away from commercial traffic, and total silence at night. The planning was effortless.</p>
+            </div>
+            <div class="author-meta">
+              <div>
+                <div class="author-name">Anita &amp; Vikram Singhal</div>
+                <div class="author-trip">Kerala Serenade &amp; Ayurveda Circuit</div>
+              </div>
+              <span class="verified-tag">Verified Trip</span>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div>
+              <div class="quote-mark">“</div>
+              <p class="testimonial-quote">Our Bali family journey was impeccably coordinated. Every private driver was punctual, polite, and knowledgeable. The villa selections in Ubud and Uluwatu exceeded every expectation.</p>
+            </div>
+            <div class="author-meta">
+              <div>
+                <div class="author-name">Kunal Oberoi</div>
+                <div class="author-trip">Bali Elements Island Explorer</div>
+              </div>
+              <span class="verified-tag">Verified Trip</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         TRAVEL GUIDE DOWNLOAD / NEWSLETTER
+         ============================================================ -->
+    <section id="guide" class="section-py">
+      <div class="container">
+        <div class="newsletter-editorial">
+          <div>
+            <span class="eyebrow">Complimentary Resource</span>
+            <h2 class="section-title" style="font-size: 2.2rem; margin-top: 0.5rem; margin-bottom: 0.75rem;">Download the 2026 India &amp; Global Travel Guide</h2>
+            <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">A 48-page editorial publication featuring seasonal climate calendars, packing guides, palace hotel rankings, and insider regional dining recommendations.</p>
+          </div>
+          <div>
+            <form class="newsletter-form" onsubmit="handleGuideDownload(event)">
+              <input type="email" required placeholder="Enter your email address" class="newsletter-input" id="guideEmail" aria-label="Email Address" />
+              <button type="submit" class="btn btn-solid-dark">Send Guide</button>
+            </form>
+            <span id="guideFeedback" style="display: none; font-size: 0.8125rem; font-weight: 600; color: #15803d; margin-top: 0.75rem;">Thank you! Your complimentary travel guide has been emailed.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       EDITORIAL FOOTER
+       ============================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-title">GoTravels</div>
+          <p class="footer-desc">GoTravels is a dedicated boutique travel organization crafting authentic, human-led travel experiences across India's royal heartlands, backwaters, and premier world destinations.</p>
+          <div style="font-family: var(--font-heading); font-size: 0.8125rem; font-weight: 700; color: #fb923c;">
+            Telephone: +91 98765 43210<br />
+            Email: concierge@gotravels.in
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Regions</h4>
+          <ul class="footer-links">
+            <li><a href="#packages" onclick="filterPackages('heritage')">Rajasthan &amp; Forts</a></li>
+            <li><a href="#packages" onclick="filterPackages('wellness')">Kerala &amp; South</a></li>
+            <li><a href="#packages" onclick="filterPackages('adventure')">Himalayan Ranges</a></li>
+            <li><a href="#packages" onclick="filterPackages('coastal')">Goa &amp; Coastal</a></li>
+            <li><a href="#packages" onclick="filterPackages('international')">Southeast Asia</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Travel Styles</h4>
+          <ul class="footer-links">
+            <li><a href="#experiences">Heritage Circuits</a></li>
+            <li><a href="#experiences">Wellness &amp; Ayurveda</a></li>
+            <li><a href="#experiences">Luxury Honeymoons</a></li>
+            <li><a href="#experiences">High Altitude Treks</a></li>
+            <li><a href="#experiences">Private Family Charters</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#why-us">About GoTravels</a></li>
+            <li><a href="#why-us">Safety &amp; Compliance</a></li>
+            <li><a href="#stories">Traveler Reviews</a></li>
+            <li><a href="#guide">Download Travel Guide</a></li>
+            <li><a href="#" onclick="openConciergeModal('General Inquiry'); return false;">Contact Concierge</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 GoTravels Ltd. All rights reserved. Registered Travel Partner.</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="#" style="color: inherit;">Privacy Policy</a>
+          <a href="#" style="color: inherit;">Terms of Booking</a>
+          <a href="#" style="color: inherit;">Guest Protection</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       CONCIERGE BOOKING & INQUIRY MODAL
+       ============================================================ -->
+  <div class="modal-backdrop" id="conciergeModal" role="dialog" aria-modal="true" aria-labelledby="modalHeading">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow">Personal Travel Concierge</span>
+          <h3 id="modalHeading" style="font-family: var(--font-editorial); font-size: 1.75rem; font-weight: 700; color: var(--text-primary); margin-top: 0.25rem;">Plan Your Custom Journey</h3>
+        </div>
+        <button class="modal-close-btn" onclick="closeConciergeModal()" aria-label="Close modal">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <form class="modal-form" id="bookingForm" onsubmit="handleBookingSubmit(event)">
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label class="form-label" for="guestName">Full Name *</label>
+              <input type="text" id="guestName" required placeholder="e.g. Arjun Kapoor" class="form-input" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="guestPhone">Phone Number *</label>
+              <input type="tel" id="guestPhone" required placeholder="+91 98765 43210" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label class="form-label" for="guestEmail">Email Address *</label>
+              <input type="email" id="guestEmail" required placeholder="name@domain.com" class="form-input" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="guestPackage">Selected Journey</label>
+              <input type="text" id="guestPackage" value="Custom Journey Plan" class="form-input" />
+            </div>
+          </div>
+
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label class="form-label" for="guestDate">Approximate Travel Month</label>
+              <select id="guestDate" class="form-select">
+                <option value="November 2026">November 2026 (Diwali / Festive)</option>
+                <option value="December 2026">December 2026 (Winter Peak)</option>
+                <option value="January 2027">January 2027</option>
+                <option value="February 2027">February 2027 (Spring Warmth)</option>
+                <option value="Later 2027">Later in 2027</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="guestParty">Travelers</label>
+              <select id="guestParty" class="form-select">
+                <option value="2 Adults (Couple)">2 Adults (Couple)</option>
+                <option value="Family (3-4 Persons)">Family (3-4 Persons)</option>
+                <option value="Group (5+ Persons)">Group (5+ Persons)</option>
+                <option value="Solo Traveler">Solo Traveler</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label class="form-label" for="guestNotes">Special Preferences or Requests</label>
+            <textarea id="guestNotes" rows="3" placeholder="Tell us about preferred pace, room types, flight assistance, or dietary requirements..." class="form-textarea"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-solid-accent" style="width: 100%; height: 50px; font-size: 0.875rem;">Submit Journey Consultation</button>
+        </form>
+
+        <div class="modal-success-state" id="modalSuccess">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#15803d" stroke-width="2" style="margin-inline: auto; margin-bottom: 1rem;">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+          <h4 style="font-family: var(--font-editorial); font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.5rem;">Inquiry Received</h4>
+          <p style="color: var(--text-secondary); font-size: 0.9375rem; max-width: 440px; margin-inline: auto;">Our senior travel consultant will review your itinerary preferences and connect with you within 3 business hours with a personalized proposal.</p>
+          <button class="btn btn-solid-dark" onclick="closeConciergeModal()" style="margin-top: 1.5rem;">Close Window</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CLEAN JAVASCRIPT LOGIC
+       ============================================================ -->
+  <script>
+    // ── Sticky Header Effect ──
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // ── Mobile Navigation Drawer ──
+    function toggleMobileNav() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('mobile-open');
+    }
+
+    // Close mobile nav when clicking a link
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('navLinks').classList.remove('mobile-open');
+      });
+    });
+
+    // ── Editorial Hero Slider ──
+    const slides = document.querySelectorAll('.hero-slide');
+    const heroLocation = document.getElementById('heroLocation');
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSub = document.getElementById('heroSub');
+    const currentSlideNum = document.getElementById('currentSlideNum');
+    let currentIdx = 0;
+    let slideTimer = null;
+
+    function updateHeroSlide(idx) {
+      slides.forEach((s, i) => {
+        s.classList.toggle('active', i === idx);
+      });
+      const activeSlide = slides[idx];
+      heroLocation.textContent = activeSlide.dataset.location;
+      heroTitle.textContent = activeSlide.dataset.title;
+      heroSub.textContent = activeSlide.dataset.sub;
+      currentSlideNum.textContent = String(idx + 1).padStart(2, '0');
+      currentIdx = idx;
+    }
+
+    function nextHeroSlide() {
+      let next = (currentIdx + 1) % slides.length;
+      updateHeroSlide(next);
+      resetSlideTimer();
+    }
+
+    function prevHeroSlide() {
+      let prev = (currentIdx - 1 + slides.length) % slides.length;
+      updateHeroSlide(prev);
+      resetSlideTimer();
+    }
+
+    function resetSlideTimer() {
+      clearInterval(slideTimer);
+      slideTimer = setInterval(nextHeroSlide, 6500);
+    }
+    resetSlideTimer();
+
+    // ── Packages Category Filter ──
+    function filterPackages(category, tabBtn) {
+      if (tabBtn) {
+        document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
+        tabBtn.classList.add('active');
+      }
+
+      const cards = document.querySelectorAll('.package-card');
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const cardCat = card.dataset.category;
+        if (category === 'all' || cardCat === category) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const countElem = document.getElementById('packageCount');
+      if (countElem) {
+        countElem.textContent = `Showing ${visibleCount} Itinerar${visibleCount === 1 ? 'y' : 'ies'}`;
+      }
+    }
+
+    function filterByExperience(cat) {
+      const pkgSection = document.getElementById('packages');
+      pkgSection.scrollIntoView({ behavior: 'smooth' });
+      const targetTab = Array.from(document.querySelectorAll('.filter-tab')).find(tab => 
+        tab.getAttribute('onclick') && tab.getAttribute('onclick').includes(cat)
+      );
+      if (targetTab) {
+        filterPackages(cat, targetTab);
+      } else {
+        filterPackages(cat);
+      }
+    }
+
+    // ── Trip Search Bar ──
+    function handleTripSearch(e) {
+      e.preventDefault();
+      const dest = document.getElementById('findDest').value;
+      const style = document.getElementById('findStyle').value;
+
+      const pkgSection = document.getElementById('packages');
+      pkgSection.scrollIntoView({ behavior: 'smooth' });
+
+      if (style) {
+        filterByExperience(style);
+      } else if (dest) {
+        filterByExperience(dest);
+      } else {
+        filterPackages('all', document.querySelector('.filter-tab'));
+      }
+    }
+
+    // ── Concierge Booking Modal ──
+    const modal = document.getElementById('conciergeModal');
+    const guestPackageInput = document.getElementById('guestPackage');
+    const bookingForm = document.getElementById('bookingForm');
+    const modalSuccess = document.getElementById('modalSuccess');
+
+    function openConciergeModal(packageName = 'Custom Journey Consultation') {
+      guestPackageInput.value = packageName;
+      bookingForm.style.display = 'flex';
+      modalSuccess.style.display = 'none';
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConciergeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeConciergeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('open')) {
+        closeConciergeModal();
+      }
+    });
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      bookingForm.style.display = 'none';
+      modalSuccess.style.display = 'block';
+    }
+
+    function handleGuideDownload(e) {
+      e.preventDefault();
+      const feedback = document.getElementById('guideFeedback');
+      feedback.style.display = 'block';
+      document.getElementById('guideEmail').value = '';
+    }
+  </script>
+</body>
+</html>
